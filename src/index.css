@@ -29,3 +29,21 @@ body {
 .home {
   margin: 2rem 12rem;
 }
+.list-group li {
+  list-style: none;
+}
+.list-group li:hover {
+  cursor: pointer;
+}
+.active {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px solid skyblue;
+  list-style: none;
+  margin-left: 0%;
+  width: 40vw;
+}
+.active:hover {
+  cursor: pointer;
+}

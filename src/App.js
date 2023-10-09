@@ -1,9 +1,9 @@
-import ListGroup from "./ListGroup";
+import { TodoWrapper } from "./components/TodoWrapper";
 
 function App() {
   return (
     <div className="App">
-      <ListGroup />
+      <TodoWrapper />
     </div>
   );
 }

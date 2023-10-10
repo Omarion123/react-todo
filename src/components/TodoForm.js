@@ -7,22 +7,9 @@ export const TodoForm = ({ addTodo }) => {
     e.preventDefault();
     addTodo(value, duration);
     setValue("");
+    setDuration("daily"); // Reset the duration select to its default value
   };
   return (
-    // <form className="TodoForm" onSubmit={handleSubmit}>
-    //   <input
-    //     type="text"
-    //     className="todo-input"
-    //     value={value}
-    //     placeholder="What is the task today?"
-    //     onInput={(e) => {
-    //       setValue(e.target.value);
-    //     }}
-    //   />
-    //   <button type="submit" className="todo-btn">
-    //     Add Task
-    //   </button>
-    // </form>
     <form className="TodoForm" onSubmit={handleSubmit}>
       <select
         className="select-box"
@@ -43,6 +30,7 @@ export const TodoForm = ({ addTodo }) => {
         onInput={(e) => {
           setValue(e.target.value);
         }}
+        required
       />
       <button type="submit">Add Task</button>
     </form>

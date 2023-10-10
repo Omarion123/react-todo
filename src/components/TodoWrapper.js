@@ -54,17 +54,20 @@ export const TodoWrapper = () => {
     setSelectedDuration(duration);
     console.log(duration);
   };
+  // Filter todos based on the selected duration
+  const filteredTodos = todos.filter((todo) => {
+    if (selectedDuration === "All") {
+      return true; // Show all todos when "All" is selected
+    } else {
+      return todo.duration === selectedDuration; // Filter by selected duration
+    }
+  });
   return (
     <div className="TodoWrapper">
       <TodoForm addTodo={addTodo} />
-      <div className="output">{<Nav />}</div>
-      {/* <div className="filter-buttons">
-        <button onClick={() => handleFilterClick("All")}>All</button>
-        <button onClick={() => handleFilterClick("Daily")}>Daily</button>
-        <button onClick={() => handleFilterClick("Weekly")}>Weekly</button>
-        <button onClick={() => handleFilterClick("Monthly")}>Monthly</button>
-        <button onClick={() => handleFilterClick("Yearly")}>Yearly</button>
-      </div> */}
+      <div className="output">
+        {<Nav handleFilterClick={handleFilterClick} />}
+      </div>
       {todos.map((todo, index) =>
         todo.isEditing ? (
           <EditTodoForm editTodo={editTask} task={todo} />

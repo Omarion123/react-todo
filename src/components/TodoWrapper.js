@@ -7,6 +7,7 @@ import Nav from "./Nav"; // Use a relative import path
 uuidv4();
 export const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
+  const [selectedDuration, setSelectedDuration] = useState("All"); // Initialize with "All"
   const addTodo = (todo, duration) => {
     console.log(todo);
     setTodos([
@@ -48,10 +49,22 @@ export const TodoWrapper = () => {
       )
     );
   };
+  // Function to set the selected duration when filter buttons are clicked
+  const handleFilterClick = (duration) => {
+    setSelectedDuration(duration);
+    console.log(duration);
+  };
   return (
     <div className="TodoWrapper">
       <TodoForm addTodo={addTodo} />
       <div className="output">{<Nav />}</div>
+      {/* <div className="filter-buttons">
+        <button onClick={() => handleFilterClick("All")}>All</button>
+        <button onClick={() => handleFilterClick("Daily")}>Daily</button>
+        <button onClick={() => handleFilterClick("Weekly")}>Weekly</button>
+        <button onClick={() => handleFilterClick("Monthly")}>Monthly</button>
+        <button onClick={() => handleFilterClick("Yearly")}>Yearly</button>
+      </div> */}
       {todos.map((todo, index) =>
         todo.isEditing ? (
           <EditTodoForm editTodo={editTask} task={todo} />
@@ -63,6 +76,7 @@ export const TodoWrapper = () => {
             deleteTodo={deleteTodo}
             editTodo={editTodo}
             index={index + 1} // Pass the index prop
+            selectedDuration={selectedDuration} // Pass selectedDuration as a prop
           />
         )
       )}

@@ -86,6 +86,46 @@ body {
   border: #0015ff;
   outline: none;
 }
+.aside-right .TodoForm button:hover {
+  background: white;
+  color: #0015ff;
+  border: 2px solid #0015ff;
+  cursor: pointer;
+}
+.aside-right .UpdateTodoForm {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  /* justify-content: space-between; */
+}
+.aside-right .UpdateTodoForm select {
+  background-color: #efefef;
+  width: 180px;
+  height: 60px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #0015ff;
+  text-align: center;
+}
+.aside-right .UpdateTodoForm input {
+  background-color: #efefef;
+  width: 646px;
+  margin-left: 12px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #0015ff;
+  padding-left: 30px;
+}
+
+.aside-right .UpdateTodoForm button {
+  background: #0015ff;
+  color: white;
+  width: 150px;
+  margin-left: 12px;
+  border: #0015ff;
+  outline: none;
+}
 
 .nav {
   display: flex;
@@ -117,6 +157,12 @@ body {
   color: white;
   border: none;
   border-bottom: 3px solid #000000;
+}
+.nav .all:hover,
+.nav-content:hover {
+  border: none;
+  outline: #0015ff;
+  cursor: pointer;
 }
 /* Apply styles to icons within .nav-content */
 .nav-content .all .svg-inline--fa {
@@ -176,6 +222,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.new-todo .buttons .edit-fa:hover {
+  cursor: pointer;
+}
 .new-todo .buttons .delete-fa {
   background-color: #efefef;
   color: red;
@@ -184,6 +233,9 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+.new-todo .buttons .delete-fa:hover {
+  cursor: pointer;
 }
 
 /* h1 {
